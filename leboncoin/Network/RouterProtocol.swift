@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol RouterProtocol {
+    var baseURL: String { get }
+    func buildURL() -> URL?
+    func asUrlRequest() -> URLRequest?
+}

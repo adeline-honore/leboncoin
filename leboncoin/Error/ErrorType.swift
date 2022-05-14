@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+enum ErrorType: Error {
+    case network
+    case decodingError
+    
+    
+    var message: String {
+        switch self {
+        case .network:
+            return "Oups!, no return from API ."
+        case .decodingError:
+            return "Oups!, error of decode"
+        }
+    }
+}

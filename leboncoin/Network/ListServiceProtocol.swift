@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+protocol ListServiceProtocol {
+    func getData(completionHandler: @escaping (Result<AdsStructure, Error>) -> ())
+}

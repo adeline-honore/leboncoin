@@ -25,6 +25,14 @@ class CustomCellList: UITableViewCell {
         // Initialization code
     }
     
+    let listButton: UIButton = {
+        let cellButtonL = UIButton()
+        //cellButtonL.setTitle("->", for: .normal)
+        cellButtonL.setImage(UIImage(systemName: "arrow.right.circle.fill"), for: .normal)
+        cellButtonL.tintColor = .green
+        return cellButtonL
+    }()
+    
     // MARK: - Override
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,6 +50,7 @@ class CustomCellList: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .orange
         contentView.addSubview(myLabel)
+        contentView.addSubview(listButton)
     }
     
     override func layoutSubviews() {
@@ -50,6 +59,11 @@ class CustomCellList: UITableViewCell {
                                y: 0,
                                width: (contentView.frame.size.width) / 2,
                                height: contentView.frame.size.height)
+        
+        listButton.frame = CGRect(x: contentView.frame.size.width - 60,
+                                  y: 5,
+                                  width: 50,
+                                  height: 50)
     }
     
     

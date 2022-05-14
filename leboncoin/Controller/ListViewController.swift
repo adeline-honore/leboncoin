@@ -16,6 +16,7 @@ class ListViewController: UIViewController {
         return tableView
     }()
     
+    private var listService = ListService(network: Network())
     
     // MARK: - Override
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
+        showList()
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,6 +44,30 @@ class ListViewController: UIViewController {
 
     // MARK: - Methods
     
+    @objc func getDetails() {
+        let detailsVC = DetailsViewController()
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
+    private func showList() {
+        
+        // get all ads
+        listService.getData() { result in
+            switch result {
+            case .success(let allAds):
+                // display data
+                self.updateList(allA: allAds)
+            case .failure(_):
+                print("error")
+            }
+        }
+    }
+    
+    // mise a jour de la cell
+    private func updateList(allA: AdsStructure) {
+        
+    }
+    
 }
 
 // MARK: - Extension
@@ -57,6 +83,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         }
         cell.textLabel?.text = "hello"
         cell.configure(text: "custom + \(indexPath.row+1)")
+        
+        cell.listButton.addTarget(self, action: #selector(getDetails), for: .touchUpInside)
+        
         return cell
     }
         
