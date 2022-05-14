@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		6E8E54CD282C48DF00C81B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54CC282C48DF00C81B71 /* AppDelegate.swift */; };
 		6E8E54CF282C48DF00C81B71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54CE282C48DF00C81B71 /* SceneDelegate.swift */; };
-		6E8E54D1282C48DF00C81B71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54D0282C48DF00C81B71 /* ViewController.swift */; };
+		6E8E54D1282C48DF00C81B71 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54D0282C48DF00C81B71 /* ListViewController.swift */; };
 		6E8E54D4282C48DF00C81B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D2282C48DF00C81B71 /* Main.storyboard */; };
 		6E8E54D6282C48E500C81B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D5282C48E500C81B71 /* Assets.xcassets */; };
 		6E8E54D9282C48E500C81B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D7282C48E500C81B71 /* LaunchScreen.storyboard */; };
 		6E8E54E4282C48E500C81B71 /* leboncoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54E3282C48E500C81B71 /* leboncoinTests.swift */; };
 		6E8E54EE282C48E500C81B71 /* leboncoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54ED282C48E500C81B71 /* leboncoinUITests.swift */; };
 		6E8E54F0282C48E500C81B71 /* leboncoinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54EF282C48E500C81B71 /* leboncoinUITestsLaunchTests.swift */; };
+		6ED129F3282FE0F700FD2D08 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED129F2282FE0F700FD2D08 /* DetailsViewController.swift */; };
+		6EF58FE3282FAB6100316EE0 /* CustomCellList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FE2282FAB6100316EE0 /* CustomCellList.swift */; };
+		6EF58FE9282FB0DB00316EE0 /* AdsStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FE8282FB0DB00316EE0 /* AdsStructure.swift */; };
+		6EF58FEB282FB16400316EE0 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FEA282FB16400316EE0 /* NetworkProtocol.swift */; };
+		6EF58FED282FB18700316EE0 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FEC282FB18600316EE0 /* RouterProtocol.swift */; };
+		6EF58FEF282FB1B300316EE0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FEE282FB1B300316EE0 /* Network.swift */; };
+		6EF58FF2282FB1F900316EE0 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FF1282FB1F900316EE0 /* ErrorType.swift */; };
+		6EF58FF4282FB24E00316EE0 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FF3282FB24E00316EE0 /* ListRouter.swift */; };
+		6EF58FF6282FB28000316EE0 /* ListServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FF5282FB28000316EE0 /* ListServiceProtocol.swift */; };
+		6EF58FF9282FB2E600316EE0 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FF8282FB2E600316EE0 /* ListService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +49,7 @@
 		6E8E54C9282C48DF00C81B71 /* leboncoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leboncoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8E54CC282C48DF00C81B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E8E54CE282C48DF00C81B71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E8E54D0282C48DF00C81B71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E8E54D0282C48DF00C81B71 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6E8E54D3282C48DF00C81B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E8E54D5282C48E500C81B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E8E54D8282C48E500C81B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +59,16 @@
 		6E8E54E9282C48E500C81B71 /* leboncoinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leboncoinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8E54ED282C48E500C81B71 /* leboncoinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leboncoinUITests.swift; sourceTree = "<group>"; };
 		6E8E54EF282C48E500C81B71 /* leboncoinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leboncoinUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6ED129F2282FE0F700FD2D08 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		6EF58FE2282FAB6100316EE0 /* CustomCellList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellList.swift; sourceTree = "<group>"; };
+		6EF58FE8282FB0DB00316EE0 /* AdsStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsStructure.swift; sourceTree = "<group>"; };
+		6EF58FEA282FB16400316EE0 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		6EF58FEC282FB18600316EE0 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		6EF58FEE282FB1B300316EE0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		6EF58FF1282FB1F900316EE0 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
+		6EF58FF3282FB24E00316EE0 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		6EF58FF5282FB28000316EE0 /* ListServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceProtocol.swift; sourceTree = "<group>"; };
+		6EF58FF8282FB2E600316EE0 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +119,13 @@
 		6E8E54CB282C48DF00C81B71 /* leboncoin */ = {
 			isa = PBXGroup;
 			children = (
+				6EF58FF0282FB1E000316EE0 /* Error */,
+				6EF58FE7282FAE4A00316EE0 /* View */,
+				6EF58FE6282FAE1A00316EE0 /* Network */,
+				6EF58FE5282FAE1100316EE0 /* Model */,
+				6EF58FE4282FAE0000316EE0 /* Controller */,
 				6E8E54CC282C48DF00C81B71 /* AppDelegate.swift */,
 				6E8E54CE282C48DF00C81B71 /* SceneDelegate.swift */,
-				6E8E54D0282C48DF00C81B71 /* ViewController.swift */,
 				6E8E54D2282C48DF00C81B71 /* Main.storyboard */,
 				6E8E54D5282C48E500C81B71 /* Assets.xcassets */,
 				6E8E54D7282C48E500C81B71 /* LaunchScreen.storyboard */,
@@ -125,6 +149,60 @@
 				6E8E54EF282C48E500C81B71 /* leboncoinUITestsLaunchTests.swift */,
 			);
 			path = leboncoinUITests;
+			sourceTree = "<group>";
+		};
+		6EF58FE4282FAE0000316EE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E8E54D0282C48DF00C81B71 /* ListViewController.swift */,
+				6ED129F2282FE0F700FD2D08 /* DetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EF58FE5282FAE1100316EE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EF58FE8282FB0DB00316EE0 /* AdsStructure.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6EF58FE6282FAE1A00316EE0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6EF58FF3282FB24E00316EE0 /* ListRouter.swift */,
+				6EF58FF5282FB28000316EE0 /* ListServiceProtocol.swift */,
+				6EF58FEE282FB1B300316EE0 /* Network.swift */,
+				6EF58FEA282FB16400316EE0 /* NetworkProtocol.swift */,
+				6EF58FEC282FB18600316EE0 /* RouterProtocol.swift */,
+				6EF58FF7282FB2CF00316EE0 /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6EF58FE7282FAE4A00316EE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6EF58FE2282FAB6100316EE0 /* CustomCellList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EF58FF0282FB1E000316EE0 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				6EF58FF1282FB1F900316EE0 /* ErrorType.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		6EF58FF7282FB2CF00316EE0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6EF58FF8282FB2E600316EE0 /* ListService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8E54D1282C48DF00C81B71 /* ViewController.swift in Sources */,
+				6EF58FF6282FB28000316EE0 /* ListServiceProtocol.swift in Sources */,
+				6E8E54D1282C48DF00C81B71 /* ListViewController.swift in Sources */,
+				6EF58FF2282FB1F900316EE0 /* ErrorType.swift in Sources */,
+				6EF58FED282FB18700316EE0 /* RouterProtocol.swift in Sources */,
+				6EF58FEF282FB1B300316EE0 /* Network.swift in Sources */,
+				6EF58FE9282FB0DB00316EE0 /* AdsStructure.swift in Sources */,
+				6EF58FEB282FB16400316EE0 /* NetworkProtocol.swift in Sources */,
 				6E8E54CD282C48DF00C81B71 /* AppDelegate.swift in Sources */,
+				6EF58FE3282FAB6100316EE0 /* CustomCellList.swift in Sources */,
+				6EF58FF9282FB2E600316EE0 /* ListService.swift in Sources */,
+				6EF58FF4282FB24E00316EE0 /* ListRouter.swift in Sources */,
+				6ED129F3282FE0F700FD2D08 /* DetailsViewController.swift in Sources */,
 				6E8E54CF282C48DF00C81B71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +531,6 @@
 				INFOPLIST_FILE = leboncoin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +557,6 @@
 				INFOPLIST_FILE = leboncoin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

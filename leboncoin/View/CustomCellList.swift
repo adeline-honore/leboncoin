@@ -11,12 +11,12 @@ class CustomCellList: UITableViewCell {
     
     
     // MARK: - Properties
-    private let myLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 17, weight: .bold)
-        label.text = "cusom cell"
-        return label
+    let listTitle: UILabel = {
+        let titleL = UILabel()
+        titleL.textColor = .white
+        titleL.font = .systemFont(ofSize: 17, weight: .bold)
+        titleL.text = "cusom cell"
+        return titleL
     }()
     
     static let identifier = "customTableViewCellList"
@@ -43,19 +43,19 @@ class CustomCellList: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        myLabel.text = nil
+        listTitle.text = nil
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .orange
-        contentView.addSubview(myLabel)
+        contentView.addSubview(listTitle)
         contentView.addSubview(listButton)
     }
     
     override func layoutSubviews() {
                 
-        myLabel.frame = CGRect(x: 10,
+        listTitle.frame = CGRect(x: 10,
                                y: 0,
                                width: (contentView.frame.size.width) / 2,
                                height: contentView.frame.size.height)
@@ -74,7 +74,7 @@ class CustomCellList: UITableViewCell {
     }
     
     public func configure(text: String) {
-        myLabel.text = text
+        listTitle.text = text
     }
 
 }

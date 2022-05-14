@@ -18,6 +18,8 @@ class ListViewController: UIViewController {
     
     private var listService = ListService(network: Network())
     
+    private var dataArray: AdsStructure = AdsStructure()
+    
     // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +67,11 @@ class ListViewController: UIViewController {
     
     // mise a jour de la cell
     private func updateList(allA: AdsStructure) {
-        
+        DispatchQueue.main.async { [weak self] in
+            
+            self?.dataArray = allA
+            self?.tableView.reloadData()
+        }
     }
     
 }
@@ -73,7 +79,7 @@ class ListViewController: UIViewController {
 // MARK: - Extension
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,8 +87,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCellList.identifier, for: indexPath) as? CustomCellList else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = "hello"
-        cell.configure(text: "custom + \(indexPath.row+1)")
+        
+        let oneData = dataArray[indexPath.row]
+        cell.listTitle.text = oneData.title
         
         cell.listButton.addTarget(self, action: #selector(getDetails), for: .touchUpInside)
         
