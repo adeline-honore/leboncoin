@@ -19,6 +19,8 @@ class ListViewController: UIViewController {
     private var listService = ListService(network: Network())
     
     private var dataArray: AdsStructure = AdsStructure()
+        
+    var addChoosen: OneAd?
     
     // MARK: - Override
     override func viewDidLoad() {
@@ -98,5 +100,17 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+        addChoosen = dataArray[indexPath.row]
+        
+        // push add datas in the next controller
+        let detailsVC = DetailsViewController()
+        detailsVC.addChoosen = addChoosen
+        
+        // Push to next view
+            navigationController?.pushViewController(detailsVC, animated: true)
     }
 }

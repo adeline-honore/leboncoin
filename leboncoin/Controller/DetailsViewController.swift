@@ -8,6 +8,9 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    
+    private var oneAddView: OneAddView =  OneAddView()
+    var addChoosen: OneAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
