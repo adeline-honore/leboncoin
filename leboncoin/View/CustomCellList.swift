@@ -9,36 +9,51 @@ import UIKit
 
 class CustomCellList: UITableViewCell {
     
-    
     // MARK: - Properties
+    
+    static let identifier = "customTableViewCellList"
+    
+    var listImageView: UIImageView = {
+        let imageViewL = UIImageView()
+        imageViewL.image = UIImage(systemName: "folder.fill")
+        imageViewL.contentMode = .scaleAspectFill
+        return imageViewL
+    }()
+    
     let listTitle: UILabel = {
         let titleL = UILabel()
-        titleL.textColor = .white
-        titleL.font = .systemFont(ofSize: 17, weight: .bold)
-        titleL.text = "cusom cell"
+        titleL.textColor = .black
+        titleL.font = .systemFont(ofSize: 17, weight: .semibold)
+        titleL.numberOfLines = 0
         return titleL
     }()
     
-    static let identifier = "customTableViewCellList"
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    let listButton: UIButton = {
-        let cellButtonL = UIButton()
-        //cellButtonL.setTitle("->", for: .normal)
-        cellButtonL.setImage(UIImage(systemName: "arrow.right.circle.fill"), for: .normal)
-        cellButtonL.tintColor = .green
-        return cellButtonL
+    var listCategory: UIImageView = {
+        let categoryL = UIImageView()
+        categoryL.tintColor = .black
+        return categoryL
     }()
     
+    var listPrice: UILabel = {
+        let priceL = UILabel()
+        priceL.textColor = .black
+        priceL.font = .systemFont(ofSize: 14)
+        return priceL
+    }()
+    
+    var listUrgent: UIImageView = {
+        let urgentL = UIImageView()
+        urgentL.image = UIImage(systemName: "star.fill")
+        return urgentL
+    }()
     // MARK: - Override
-
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     override func prepareForReuse() {
@@ -48,22 +63,37 @@ class CustomCellList: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .orange
+        contentView.backgroundColor = .white
         contentView.addSubview(listTitle)
-        contentView.addSubview(listButton)
+        contentView.addSubview(listImageView)
+        contentView.addSubview(listPrice)
+        contentView.addSubview(listUrgent)
+        contentView.addSubview(listCategory)
+        
     }
     
     override func layoutSubviews() {
+        
+        listImageView.frame = CGRect(x: contentView.frame.size.width * 0.02,
+                               y: 5,
+                               width: contentView.frame.size.width * 0.05,
+                               height: contentView.frame.size.width * 0.05)
                 
-        listTitle.frame = CGRect(x: 10,
-                               y: 0,
-                               width: (contentView.frame.size.width) / 2,
+        listTitle.frame = CGRect(x: listImageView.frame.minY + listImageView.frame.width + contentView.frame.size.width * 0.04,
+                                 y: 5,
+                                 width: contentView.frame.size.width * 0.60,
                                height: contentView.frame.size.height)
         
-        listButton.frame = CGRect(x: contentView.frame.size.width - 60,
-                                  y: 5,
-                                  width: 50,
-                                  height: 50)
+        listCategory.frame = CGRect(x: listTitle.frame.minY + listTitle.frame.width + contentView.frame.size.width * 0.04,
+                               y: 5,
+                               width: contentView.frame.size.width * 0.05,
+                               height: contentView.frame.size.width * 0.05)
+        
+        listUrgent.frame = CGRect(x: listCategory.frame.minY + listCategory.frame.width + contentView.frame.size.width * 0.04,
+                               y: 5,
+                               width: contentView.frame.size.width * 0.05,
+                               height: contentView.frame.size.width * 0.05)
+        
     }
     
     
