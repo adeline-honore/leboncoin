@@ -38,48 +38,11 @@ class DetailsViewController: UIViewController {
         oneAddView.addTitle.text = addChoosen.title
         oneAddView.addImageView.image = UIImage(systemName: "folder.fill")
         oneAddView.addCategory.image = setCategoryImage(categoryId: addChoosen.category_id)
-        oneAddView.addDate.text = addChoosen.creation_date
+        oneAddView.addDate.text = transformDate(dateString: addChoosen.creation_date)
         oneAddView.addUrgent.tintColor = setUrgentColor(isUrgent: addChoosen.is_urgent)
         oneAddView.addSiret.text = addChoosen.siret
         oneAddView.addDescription.text = addChoosen.description
     }
-    
-    
-    
-    /*
-    private func setCategoryImage(categoryAdd: Int) -> UIImage {
-        
-        var imageCategory: UIImage = UIImage(systemName: "circle.hexagongrid.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        
-        switch categoryAdd {
-            case 1:
-            imageCategory =  UIImage(systemName: "car.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 2:
-            imageCategory = UIImage(systemName: "tshirt.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 3:
-            imageCategory = UIImage(systemName: "hammer.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 4:
-            imageCategory = UIImage(systemName: "house.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 5:
-            imageCategory = UIImage(systemName: "puzzlepiece.extension.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 6:
-            imageCategory = UIImage(systemName: "rectangle.and.paperclip") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 7:
-            imageCategory = UIImage(systemName: "a.book.closed.fill.ja") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 8:
-            imageCategory = UIImage(systemName: "desktopcomputer") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 9:
-            imageCategory = UIImage(systemName: "person.2.wave.2.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 10:
-            imageCategory = UIImage(systemName: "tortoise.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 11:
-            imageCategory = UIImage(systemName: "") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        default:
-            break
-        }
-        return imageCategory
-    }*/
-    
     
     override func viewDidLayoutSubviews() {
         

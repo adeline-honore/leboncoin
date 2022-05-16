@@ -65,6 +65,7 @@ class ListViewController: UIViewController {
             
             self?.dataArray = allA
             self?.tableView.reloadData()
+            self?.dataArray = self?.getEntireList(list: allA) ?? AdsStructure()
         }
     }
     
@@ -106,54 +107,5 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Push to next view
         navigationController?.pushViewController(detailsVC, animated: true)
-    }
-}
-
-
-
-
-extension UIViewController {
-    
-    func setUrgentColor(isUrgent: Bool) -> UIColor {
-        var color : UIColor
-        if isUrgent == true {
-            color = .orange
-        } else {
-            color = view.backgroundColor ?? .white
-        }
-        return color
-    }
-    
-    func setCategoryImage(categoryId: Int) -> UIImage? {
-        
-        var imageCategory: UIImage = UIImage(systemName: "circle.hexagongrid.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        
-        switch categoryId {
-        case 1:
-            imageCategory =  UIImage(systemName: "car.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 2:
-            imageCategory = UIImage(systemName: "tshirt.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 3:
-            imageCategory = UIImage(systemName: "hammer.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 4:
-            imageCategory = UIImage(systemName: "house.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 5:
-            imageCategory = UIImage(systemName: "puzzlepiece.extension.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 6:
-            imageCategory = UIImage(systemName: "rectangle.and.paperclip") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 7:
-            imageCategory = UIImage(systemName: "a.book.closed.fill.ja") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 8:
-            imageCategory = UIImage(systemName: "desktopcomputer") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 9:
-            imageCategory = UIImage(systemName: "person.2.wave.2.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 10:
-            imageCategory = UIImage(systemName: "tortoise.fill") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        case 11:
-            imageCategory = UIImage(systemName: "") ?? UIImage(systemName: "circle.hexagongrid.fill")!
-        default:
-            break
-        }
-        return imageCategory
     }
 }
