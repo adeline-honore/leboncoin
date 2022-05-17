@@ -25,11 +25,23 @@ class PrimaryViewController: UIViewController {
         return view
     }()
     
+    var scrollView: UIScrollView!
+    var colorView: UIView!
+    
     // MARK: - Override
     override func loadView() {
         self.view = UIView()
+        navigationItem.title = "Liste"
         self.setupSubviews()
         showList()
+        
+        colorView = UIView()
+        scrollView = UIScrollView()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Catégories",
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(setCategoriesButton))
     }
     
     // MARK: - Methods
@@ -74,5 +86,97 @@ class PrimaryViewController: UIViewController {
             self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
+    }
+}
+
+
+
+extension PrimaryViewController: UIScrollViewDelegate {
+    
+    @objc func setCategoriesButton() {
+
+            let categoryOptions = ["Véhicule", "Mode", "Bricolage", "Maison", "Loisirs", "Immobilier", "Livres/CD/DVD", "Multimédia", "Service", "Animaux", "Enfants"]
+        
+            scrollView.frame = CGRect(x: UIScreen.main.bounds.width - 70,
+                                      y: 20,
+                                      width: UIScreen.main.bounds.width / 2.0,
+                                      height: UIScreen.main.bounds.height / 2.0)
+        
+            scrollView.delegate = self
+            scrollView.isScrollEnabled = true
+
+            let buttonHeight: CGFloat = UIScreen.main.bounds.height / 15
+            let contentHeight: CGFloat = CGFloat(categoryOptions.count) * buttonHeight
+            colorView.frame = CGRect(x: 0,
+                                     y: 0,
+                                     width: scrollView.frame.width,
+                                     height: contentHeight)
+        
+            colorView.layer.cornerRadius = 10
+            colorView.clipsToBounds = true
+            colorView.isUserInteractionEnabled = false
+
+            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width / 2.0, height: contentHeight)
+
+        
+            for (index, title) in categoryOptions.enumerated() {
+                let button = UIButton(type: .custom)
+                
+                let navigationBarHeight: CGFloat = self.navigationController!.navigationBar.frame.maxY
+                
+                button.backgroundColor = .purple
+                button.frame = CGRect(x: UIScreen.main.bounds.width / 2.0,
+                                      y: navigationBarHeight + (buttonHeight * CGFloat(index)),
+                                      width: UIScreen.main.bounds.width / 2.0,
+                                      height: buttonHeight)
+                button.setTitle(title, for: .normal)
+                view.addSubview(button)
+                
+                button.addTarget(self, action: #selector(filterCategories), for: .touchUpInside)
+            }
+
+            scrollView.addSubview(colorView)
+            view.addSubview(scrollView)
+        
+        
+        }
+    
+    @objc func filterCategories(_ sender: UIButton) {
+                
+        guard let idString = sender.titleLabel?.text  else {
+            return
+        }
+        
+        var id: Int = 0
+        
+        switch idString {
+        case "Véhicule":
+            id = 1
+        case "Mode":
+            id = 2
+        case "Bricolage":
+            id = 3
+        case "Maison":
+            id = 4
+        case "Loisirs":
+            id = 5
+        case "Immobilier":
+            id = 6
+        case "Livres/CD/DVD":
+            id = 7
+        case "Multimédia":
+            id = 8
+        case "Service":
+            id = 9
+        case "Animaux":
+            id = 10
+        case "Enfants":
+            id = 11
+        default:
+            break
+        }
+        
+        dataArray = getOnlyOneCategory(categoryChoosen: id, entireDictionnary: dataArray)
+        self.tableView.reloadData()
     }
 }
