@@ -16,14 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
        //Create a window that is the same size as the screen
        window = UIWindow(frame: UIScreen.main.bounds)
-       // Create a view controller
-       let viewController = ListViewController()
-        // create navigation controller
-        let navController = UINavigationController(rootViewController: viewController)
-       // Assign the view controller as `window`'s root view controller
-       window?.rootViewController = navController
-       // Show the window
-       window?.makeKeyAndVisible()
+        
+        let viewController = AdSplitViewController()
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 }

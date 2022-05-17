@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/*
 class ListViewController: UIViewController {
     
     // MARK: - Properties
@@ -109,3 +109,4 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
+*/

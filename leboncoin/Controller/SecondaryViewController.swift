@@ -1,25 +1,29 @@
 //
-//  DetailsViewController.swift
+//  SecondaryViewController.swift
 //  leboncoin
 //
-//  Created by HONORE Adeline on 14/05/2022.
+//  Created by HONORE Adeline on 17/05/2022.
 //
 
 import UIKit
-/*
-class DetailsViewController: UIViewController {
-    
-    // MARK: - Poperties
-    private var oneAddView: OneAddView =  OneAddView()
-    var addChoosen: OneAd?
 
+class SecondaryViewController: UIViewController {
+    
+    // MARK: - Properties
+    var addChoosen: OneAd?
+    private var oneAddView: OneAddView =  OneAddView()
+    
     // MARK: - Override
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        navigationItem.title = "Details de l'annonce"
-        
-        showAddDetails()
+    override func loadView() {
+        self.view = UIView()
+        self.view.backgroundColor = .orange
+        navigationItem.title = "Détails"
+        self.setupSubviews()
+    }
+   
+    // MARK: - Methods
+    
+    private func setupSubviews() {
         view.addSubview(oneAddView.addId)
         view.addSubview(oneAddView.addTitle)
         view.addSubview(oneAddView.addImageView)
@@ -30,22 +34,26 @@ class DetailsViewController: UIViewController {
         view.addSubview(oneAddView.addSiret)
     }
     
-    // MARK: - Methods
-    
-    private func showAddDetails() {
+    func showAdDetails(_ adSelected: OneAd) {
+        oneAddView.addId.text = String(adSelected.id)
+        oneAddView.addTitle.text = adSelected.title
+        oneAddView.addImageView.image = UIImage(named: "pb")
+        oneAddView.addCategory.image = setCategoryImage(categoryId: adSelected.category_id)
+        oneAddView.addDate.text = transformDate(dateString:  adSelected.creation_date)
+        oneAddView.addUrgent.tintColor = setUrentColor(isUrgent: adSelected.is_urgent)
+        oneAddView.addSiret.text = adSelected.siret
+        oneAddView.addDescription.text = adSelected.description
         
-        guard let addChoosen = addChoosen else {
-            return
+    }
+    
+    private func setUrentColor(isUrgent: Bool) -> UIColor {
+        var color : UIColor
+        if isUrgent == true {
+            color = .orange
+        } else {
+            color = view.backgroundColor ?? .white
         }
-
-        oneAddView.addId.text = String(addChoosen.id)
-        oneAddView.addTitle.text = addChoosen.title
-        oneAddView.addImageView.image = UIImage(systemName: "folder.fill")
-        oneAddView.addCategory.image = setCategoryImage(categoryId: addChoosen.category_id)
-        oneAddView.addDate.text = transformDate(dateString: addChoosen.creation_date)
-        oneAddView.addUrgent.tintColor = setUrgentColor(isUrgent: addChoosen.is_urgent)
-        oneAddView.addSiret.text = addChoosen.siret
-        oneAddView.addDescription.text = addChoosen.description
+        return color
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,7 +62,7 @@ class DetailsViewController: UIViewController {
         let imageHeight: CGFloat = 140
         
         let viewWidth = view.frame.width
-        
+                
         oneAddView.addTitle.frame = CGRect(x: (viewWidth - (viewWidth * 0.75)) / 2,
                                            y: 90,
                                            width: viewWidth * 0.75,
@@ -90,6 +98,4 @@ class DetailsViewController: UIViewController {
                                                  width: viewWidth * 0.75,
                                                  height: 700)
     }
-    
-}*/
-
+}
