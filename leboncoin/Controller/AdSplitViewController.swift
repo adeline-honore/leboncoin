@@ -24,6 +24,15 @@ class AdSplitViewController: UISplitViewController, PrimaryViewControllerDelegat
         self.loadViewControllers()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            self.preferredDisplayMode = .oneBesideSecondary
+        } else {
+            self.preferredDisplayMode = .oneOverSecondary
+        }
+    }
+    
     // MARK: - Methods
     
     func didSelectAd(_ ad: OneAd) {

@@ -17,10 +17,13 @@ extension PrimaryViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let oneData = dataArray[indexPath.row]
+        guard let imageDataURL = oneData.images_url.small else {
+            return CustomCellList()
+        }
+                
         cell.listTitle.text = oneData.title
         cell.listPrice.text = String(oneData.price)
         cell.listUrgent.tintColor = setUrgentColor(isUrgent: oneData.is_urgent)
-        cell.listImageView.image = UIImage(systemName: "folder.fill")
         cell.listCategory.image = setCategoryImage(categoryId: oneData.category_id)
         
         return cell

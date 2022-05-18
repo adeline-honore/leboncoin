@@ -37,7 +37,6 @@ class SecondaryViewController: UIViewController {
     func showAdDetails(_ adSelected: OneAd) {
         oneAddView.addId.text = String(adSelected.id)
         oneAddView.addTitle.text = adSelected.title
-        oneAddView.addImageView.image = UIImage(named: "pb")
         oneAddView.addCategory.image = setCategoryImage(categoryId: adSelected.category_id)
         oneAddView.addDate.text = transformDate(dateString:  adSelected.creation_date)
         oneAddView.addUrgent.tintColor = setUrentColor(isUrgent: adSelected.is_urgent)
