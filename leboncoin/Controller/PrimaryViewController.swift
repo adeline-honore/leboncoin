@@ -15,8 +15,10 @@ class PrimaryViewController: UIViewController {
     
     // MARK: - Properties
     var dataArray: AdsStructure = AdsStructure()
+    var allData: AdsStructure = AdsStructure()
     private var listService = ListService(network: Network())
     var delegate: PrimaryViewControllerDelegate?
+    var buttons: [UIButton] = [UIButton]()
     
     private let tableView: UITableView = {
         let view = UITableView()
@@ -37,7 +39,14 @@ class PrimaryViewController: UIViewController {
         
         colorView = UIView()
         scrollView = UIScrollView()
-        
+        /*
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Catégories",
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(setCategoriesButton))*/
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Catégories",
                                                                  style: .plain,
                                                                  target: self,
@@ -65,6 +74,7 @@ class PrimaryViewController: UIViewController {
         
         DispatchQueue.main.async { [weak self] in
             
+            self?.allData = allA
             self?.dataArray = allA
             self?.tableView.reloadData()
             
@@ -133,12 +143,12 @@ extension PrimaryViewController: UIScrollViewDelegate {
                 view.addSubview(button)
                 
                 button.addTarget(self, action: #selector(filterCategories), for: .touchUpInside)
+                buttons.append(button)
+                button.isHidden = false
             }
 
             scrollView.addSubview(colorView)
             view.addSubview(scrollView)
-        
-        
         }
     
     @objc func filterCategories(_ sender: UIButton) {
@@ -176,7 +186,11 @@ extension PrimaryViewController: UIScrollViewDelegate {
             break
         }
         
-        dataArray = getOnlyOneCategory(categoryChoosen: id, entireDictionnary: dataArray)
+        dataArray = getOnlyOneCategory(categoryChoosen: id, entireDictionnary: allData)
         self.tableView.reloadData()
+        
+        buttons.forEach { buttonElement in
+            buttonElement.isHidden = true
+        }
     }
 }
