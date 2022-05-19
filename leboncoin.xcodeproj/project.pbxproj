@@ -17,9 +17,12 @@
 		6E8E54D4282C48DF00C81B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D2282C48DF00C81B71 /* Main.storyboard */; };
 		6E8E54D6282C48E500C81B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D5282C48E500C81B71 /* Assets.xcassets */; };
 		6E8E54D9282C48E500C81B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D7282C48E500C81B71 /* LaunchScreen.storyboard */; };
-		6E8E54E4282C48E500C81B71 /* leboncoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54E3282C48E500C81B71 /* leboncoinTests.swift */; };
 		6E8E54EE282C48E500C81B71 /* leboncoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54ED282C48E500C81B71 /* leboncoinUITests.swift */; };
 		6E8E54F0282C48E500C81B71 /* leboncoinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54EF282C48E500C81B71 /* leboncoinUITestsLaunchTests.swift */; };
+		6EAA9F622835A88B001B2BC2 /* TestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA9F612835A88B001B2BC2 /* TestCase.swift */; };
+		6EAA9F642835A8C6001B2BC2 /* NetworkFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA9F632835A8C6001B2BC2 /* NetworkFake.swift */; };
+		6EAA9F662835A94B001B2BC2 /* ListTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA9F652835A94B001B2BC2 /* ListTestCase.swift */; };
+		6EAA9F682835A9A0001B2BC2 /* List.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EAA9F672835A9A0001B2BC2 /* List.json */; };
 		6EC860882832F25C00236014 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC860872832F25C00236014 /* Extension+ViewController.swift */; };
 		6EF58FE3282FAB6100316EE0 /* CustomCellList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FE2282FAB6100316EE0 /* CustomCellList.swift */; };
 		6EF58FE9282FB0DB00316EE0 /* AdsStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF58FE8282FB0DB00316EE0 /* AdsStructure.swift */; };
@@ -63,10 +66,13 @@
 		6E8E54D8282C48E500C81B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E8E54DA282C48E500C81B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E8E54DF282C48E500C81B71 /* leboncoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leboncoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E8E54E3282C48E500C81B71 /* leboncoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leboncoinTests.swift; sourceTree = "<group>"; };
 		6E8E54E9282C48E500C81B71 /* leboncoinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leboncoinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8E54ED282C48E500C81B71 /* leboncoinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leboncoinUITests.swift; sourceTree = "<group>"; };
 		6E8E54EF282C48E500C81B71 /* leboncoinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leboncoinUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6EAA9F612835A88B001B2BC2 /* TestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCase.swift; sourceTree = "<group>"; };
+		6EAA9F632835A8C6001B2BC2 /* NetworkFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFake.swift; sourceTree = "<group>"; };
+		6EAA9F652835A94B001B2BC2 /* ListTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTestCase.swift; sourceTree = "<group>"; };
+		6EAA9F672835A9A0001B2BC2 /* List.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = List.json; sourceTree = "<group>"; };
 		6EC860872832F25C00236014 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
 		6EF58FE2282FAB6100316EE0 /* CustomCellList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellList.swift; sourceTree = "<group>"; };
 		6EF58FE8282FB0DB00316EE0 /* AdsStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsStructure.swift; sourceTree = "<group>"; };
@@ -146,7 +152,10 @@
 		6E8E54E2282C48E500C81B71 /* leboncoinTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E8E54E3282C48E500C81B71 /* leboncoinTests.swift */,
+				6EAA9F612835A88B001B2BC2 /* TestCase.swift */,
+				6EAA9F632835A8C6001B2BC2 /* NetworkFake.swift */,
+				6EAA9F652835A94B001B2BC2 /* ListTestCase.swift */,
+				6EAA9F672835A9A0001B2BC2 /* List.json */,
 			);
 			path = leboncoinTests;
 			sourceTree = "<group>";
@@ -339,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAA9F682835A9A0001B2BC2 /* List.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8E54E4282C48E500C81B71 /* leboncoinTests.swift in Sources */,
+				6EAA9F642835A8C6001B2BC2 /* NetworkFake.swift in Sources */,
+				6EAA9F662835A94B001B2BC2 /* ListTestCase.swift in Sources */,
+				6EAA9F622835A88B001B2BC2 /* TestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

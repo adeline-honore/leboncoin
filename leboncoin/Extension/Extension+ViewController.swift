@@ -100,7 +100,20 @@ extension UIViewController {
             }
         }
         // then sort oneCategory by date
-        oneCategory = sortByDate(list: oneCategory)
+        oneCategory = getEntireList(list: oneCategory)
+        
+        return oneCategory
+    }
+    
+    func getAllAds(entireDictionnary: AdsStructure) -> AdsStructure {
+        var oneCategory: AdsStructure = AdsStructure()
+        
+        // first : create One with only one category adds
+        entireDictionnary.forEach { addElement in
+            oneCategory.append(addElement)
+        }
+        // then sort oneCategory by date
+        oneCategory = getEntireList(list: oneCategory)
         
         return oneCategory
     }

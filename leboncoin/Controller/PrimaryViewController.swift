@@ -105,7 +105,7 @@ extension PrimaryViewController: UIScrollViewDelegate {
     
     @objc func setCategoriesButton() {
 
-            let categoryOptions = ["Véhicule", "Mode", "Bricolage", "Maison", "Loisirs", "Immobilier", "Livres/CD/DVD", "Multimédia", "Service", "Animaux", "Enfants"]
+            let categoryOptions = ["Véhicule", "Mode", "Bricolage", "Maison", "Loisirs", "Immobilier", "Livres/CD/DVD", "Multimédia", "Service", "Animaux", "Enfants", "Tout voir"]
         
             scrollView.frame = CGRect(x: UIScreen.main.bounds.width - 70,
                                       y: 20,
@@ -134,7 +134,7 @@ extension PrimaryViewController: UIScrollViewDelegate {
                 
                 let navigationBarHeight: CGFloat = self.navigationController!.navigationBar.frame.maxY
                 
-                button.backgroundColor = .purple
+                button.backgroundColor = .lightGray
                 button.frame = CGRect(x: UIScreen.main.bounds.width / 2.0,
                                       y: navigationBarHeight + (buttonHeight * CGFloat(index)),
                                       width: UIScreen.main.bounds.width / 2.0,
@@ -186,7 +186,11 @@ extension PrimaryViewController: UIScrollViewDelegate {
             break
         }
         
-        dataArray = getOnlyOneCategory(categoryChoosen: id, entireDictionnary: allData)
+        if (sender.titleLabel?.text != "Tout voir") {
+            dataArray = getOnlyOneCategory(categoryChoosen: id, entireDictionnary: allData)
+        } else {
+            dataArray = getAllAds(entireDictionnary: allData)
+        }
         self.tableView.reloadData()
         
         buttons.forEach { buttonElement in

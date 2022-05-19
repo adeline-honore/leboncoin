@@ -16,7 +16,7 @@ class SecondaryViewController: UIViewController {
     // MARK: - Override
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = .orange
+        self.view.backgroundColor = .white
         navigationItem.title = "Détails"
         self.setupSubviews()
     }

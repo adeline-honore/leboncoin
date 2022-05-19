@@ -23,7 +23,7 @@ class CustomCellList: UITableViewCell {
     let listTitle: UILabel = {
         let titleL = UILabel()
         titleL.textColor = .black
-        titleL.font = .systemFont(ofSize: 17, weight: .semibold)
+        titleL.font = .systemFont(ofSize: 17)
         titleL.numberOfLines = 0
         return titleL
     }()
@@ -58,7 +58,6 @@ class CustomCellList: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        listTitle.text = nil
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -74,25 +73,30 @@ class CustomCellList: UITableViewCell {
     
     override func layoutSubviews() {
         
-        listImageView.frame = CGRect(x: contentView.frame.size.width * 0.02,
+        listImageView.frame = CGRect(x: contentView.frame.size.width * 0.06,
                                y: 5,
                                width: contentView.frame.size.width * 0.05,
-                               height: contentView.frame.size.width * 0.05)
+                                     height: contentView.frame.size.height - (contentView.frame.size.height * 0.05))
                 
-        listTitle.frame = CGRect(x: listImageView.frame.minY + listImageView.frame.width + contentView.frame.size.width * 0.04,
+        listTitle.frame = CGRect(x: listImageView.frame.minX + listImageView.frame.width + (contentView.frame.size.width * 0.06),
                                  y: 5,
-                                 width: contentView.frame.size.width * 0.60,
+                                 width: contentView.frame.size.width * 0.50,
                                height: contentView.frame.size.height)
         
-        listCategory.frame = CGRect(x: listTitle.frame.minY + listTitle.frame.width + contentView.frame.size.width * 0.04,
+        listCategory.frame = CGRect(x: listTitle.frame.maxY + listTitle.frame.width + (contentView.frame.size.width * 0.04),
                                y: 5,
                                width: contentView.frame.size.width * 0.05,
                                height: contentView.frame.size.width * 0.05)
         
-        listUrgent.frame = CGRect(x: listCategory.frame.minY + listCategory.frame.width + contentView.frame.size.width * 0.04,
+        listUrgent.frame = CGRect(x: listCategory.frame.minX + listCategory.frame.width + (contentView.frame.size.width * 0.04),
                                y: 5,
-                               width: contentView.frame.size.width * 0.05,
-                               height: contentView.frame.size.width * 0.05)
+                               width: contentView.frame.size.width * 0.06,
+                               height: contentView.frame.size.width * 0.06)
+        
+        listPrice.frame = CGRect(x: listUrgent.frame.minX + listUrgent.frame.width + (contentView.frame.size.width * 0.04),
+                               y: 5,
+                               width: contentView.frame.size.width * 0.1,
+                               height: contentView.frame.size.width * 0.06)
         
     }
     
@@ -102,9 +106,4 @@ class CustomCellList: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    public func configure(text: String) {
-        listTitle.text = text
-    }
-
 }
