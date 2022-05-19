@@ -63,8 +63,9 @@ class PrimaryViewController: UIViewController {
             case .success(let allAds):
                 // display data
                 self.updateList(allA: allAds)
-            case .failure(_):
-                print("error")
+            case .failure(let error):
+                let element = error as! ErrorType
+                self.errorMessage(element: element)
             }
         }
     }
