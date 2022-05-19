@@ -14,7 +14,7 @@ enum TestCase {
     var resource: String {
         switch self {
         case .list:
-            return "list"
+            return "List"
         }
     }
 }

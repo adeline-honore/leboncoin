@@ -34,7 +34,7 @@ class ListTestCase: XCTestCase {
                 XCTFail()
             }
         }
-        wait(for: [expectation], timeout: 450)
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func testChangeRateShouldPostSuccessOnDataCategoryId() {
@@ -53,7 +53,7 @@ class ListTestCase: XCTestCase {
                 XCTFail()
             }
         }
-        wait(for: [expectation], timeout: 450)
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func testChangeRateShouldPostSuccessOnDataTitle() {
@@ -72,7 +72,7 @@ class ListTestCase: XCTestCase {
                 XCTFail()
             }
         }
-        wait(for: [expectation], timeout: 450)
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func testChangeRateShouldPostSuccessOnDataDescription() {
@@ -85,13 +85,13 @@ class ListTestCase: XCTestCase {
         listService.getData { result in
             switch result {
             case .success(_):
-                XCTAssertEqual(try? result.get().description, descriptionReceived)
+                XCTAssertEqual(try? result.get().first?.description, descriptionReceived)
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()
             }
         }
-        wait(for: [expectation], timeout: 450)
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func testChangeRateShouldPostSuccessOnDataPrice() {
@@ -110,7 +110,7 @@ class ListTestCase: XCTestCase {
                 XCTFail()
             }
         }
-        wait(for: [expectation], timeout: 450)
+        wait(for: [expectation], timeout: 0.1)
     }
     /*
     func testChangeRateShouldPostSuccessOnDataImagesURL() {
@@ -124,8 +124,8 @@ class ListTestCase: XCTestCase {
         listService.getData { result in
             switch result {
             case .success(_):
-                XCTAssertEqual(try? result.get().ImagesURL.first?.key, smallReceived)
-                XCTAssertEqual(try? result.get().thumb.first?.value, thumbReceived)
+                XCTAssertEqual(try? result.get().first?.images_url.first?.key, smallReceived)
+                XCTAssertEqual(try? result.get().first?.thumb.first?.value, thumbReceived)
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()
@@ -150,7 +150,7 @@ class ListTestCase: XCTestCase {
                 XCTFail()
             }
         }
-        wait(for: [expectation], timeout: 450)
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func testChangeRateShouldPostSuccessOnDataIsUrgent() {
@@ -169,7 +169,7 @@ class ListTestCase: XCTestCase {
                 XCTFail()
             }
         }
-        wait(for: [expectation], timeout: 450)
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func testChangeRateShouldReturnFailure() {
@@ -186,7 +186,7 @@ class ListTestCase: XCTestCase {
                 expectation.fulfill()
             }
         }
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 0.1)
     }
 
 }
