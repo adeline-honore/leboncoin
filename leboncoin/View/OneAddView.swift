@@ -66,6 +66,7 @@ class OneAddView: UIView {
         descA.font = .systemFont(ofSize: 17, weight: .bold)
         descA.numberOfLines = 0
         descA.textAlignment = .center
+        descA.sizeToFit()
         return descA
     }()
     

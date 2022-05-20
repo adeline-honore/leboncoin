@@ -39,11 +39,6 @@ class PrimaryViewController: UIViewController {
         
         colorView = UIView()
         scrollView = UIScrollView()
-        /*
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Catégories",
-                                                                 style: .plain,
-                                                                 target: self,
-                                                                 action: #selector(setCategoriesButton))*/
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,6 +92,10 @@ class PrimaryViewController: UIViewController {
             self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
+    }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
 }
 

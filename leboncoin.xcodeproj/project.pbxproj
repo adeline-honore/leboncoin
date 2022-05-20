@@ -13,8 +13,6 @@
 		6E47867928345708001AF4BD /* Extension+PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E47867828345708001AF4BD /* Extension+PrimaryViewController.swift */; };
 		6E7E9D2B2831B47300ABD257 /* OneAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E9D2A2831B47300ABD257 /* OneAddView.swift */; };
 		6E8E54CD282C48DF00C81B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54CC282C48DF00C81B71 /* AppDelegate.swift */; };
-		6E8E54CF282C48DF00C81B71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54CE282C48DF00C81B71 /* SceneDelegate.swift */; };
-		6E8E54D4282C48DF00C81B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D2282C48DF00C81B71 /* Main.storyboard */; };
 		6E8E54D6282C48E500C81B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D5282C48E500C81B71 /* Assets.xcassets */; };
 		6E8E54D9282C48E500C81B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E54D7282C48E500C81B71 /* LaunchScreen.storyboard */; };
 		6E8E54EE282C48E500C81B71 /* leboncoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E54ED282C48E500C81B71 /* leboncoinUITests.swift */; };
@@ -60,8 +58,6 @@
 		6E7E9D2A2831B47300ABD257 /* OneAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneAddView.swift; sourceTree = "<group>"; };
 		6E8E54C9282C48DF00C81B71 /* leboncoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leboncoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8E54CC282C48DF00C81B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E8E54CE282C48DF00C81B71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E8E54D3282C48DF00C81B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E8E54D5282C48E500C81B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E8E54D8282C48E500C81B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E8E54DA282C48E500C81B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,8 +136,6 @@
 				6EF58FE5282FAE1100316EE0 /* Model */,
 				6EF58FE4282FAE0000316EE0 /* Controller */,
 				6E8E54CC282C48DF00C81B71 /* AppDelegate.swift */,
-				6E8E54CE282C48DF00C81B71 /* SceneDelegate.swift */,
-				6E8E54D2282C48DF00C81B71 /* Main.storyboard */,
 				6E8E54D5282C48E500C81B71 /* Assets.xcassets */,
 				6E8E54D7282C48E500C81B71 /* LaunchScreen.storyboard */,
 				6E8E54DA282C48E500C81B71 /* Info.plist */,
@@ -340,7 +334,6 @@
 			files = (
 				6E8E54D9282C48E500C81B71 /* LaunchScreen.storyboard in Resources */,
 				6E8E54D6282C48E500C81B71 /* Assets.xcassets in Resources */,
-				6E8E54D4282C48DF00C81B71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +375,6 @@
 				6E47867528344F0B001AF4BD /* SecondaryViewController.swift in Sources */,
 				6EF58FF9282FB2E600316EE0 /* ListService.swift in Sources */,
 				6EF58FF4282FB24E00316EE0 /* ListRouter.swift in Sources */,
-				6E8E54CF282C48DF00C81B71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,14 +413,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6E8E54D2282C48DF00C81B71 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E8E54D3282C48DF00C81B71 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6E8E54D7282C48E500C81B71 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

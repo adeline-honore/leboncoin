@@ -112,11 +112,11 @@ class ListTestCase: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.1)
     }
-    /*
+    
     func testChangeRateShouldPostSuccessOnDataImagesURL() {
         // Given
         let smallReceived = "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/254308d0083d9293657d938f782c079bfa4a0b3a.jpg"
-        let thumbreceived = "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-thumb/254308d0083d9293657d938f782c079bfa4a0b3a.jpg"
+        let thumbReceived = "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-thumb/254308d0083d9293657d938f782c079bfa4a0b3a.jpg"
         initSUT()
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change")
@@ -124,15 +124,15 @@ class ListTestCase: XCTestCase {
         listService.getData { result in
             switch result {
             case .success(_):
-                XCTAssertEqual(try? result.get().first?.images_url.first?.key, smallReceived)
-                XCTAssertEqual(try? result.get().first?.thumb.first?.value, thumbReceived)
+                XCTAssertEqual(try? result.get().first?.images_url.small, smallReceived)
+                XCTAssertEqual(try? result.get().first?.images_url.thumb, thumbReceived)
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()
             }
         }
         wait(for: [expectation], timeout: 0.01)
-    }*/
+    }
     
     func testChangeRateShouldPostSuccessOnDataCreationDate() {
         // Given
